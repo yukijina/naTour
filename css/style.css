@@ -38,12 +38,6 @@ html {
   /* root font: 10px, calculation browser font size 16px = 100%, 10/16*100 = 62.5% */ }
 
 body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  /* font-size: 16px; */
-  line-height: 1.7;
-  color: #777;
-  padding: 3rem;
   box-sizing: border-box; }
 
 body {
@@ -120,6 +114,11 @@ body {
 .btn--animated {
   animation: moveInBottom .5s ease-out .75s;
   animation-fill-mode: backwards; }
+
+.row {
+  max-width: 114rem;
+  background-color: #eee;
+  margin: 0 auto; }
 
 /*============= Header ===================== */
 .header {
