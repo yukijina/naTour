@@ -2,5 +2,26 @@
   max-width: $grid-width;
   background-color: #eee;
   margin: 0 auto;
-  margin-bottom: $gutter-vertical;//problem here
+  margin-bottom: $gutter-vertical;
+
+  &:last-child{
+   margin-bottom: 0;
+  }
+
+  @include clearfix;
+
+  .col-1-of-2 {
+    width: calc((100% - #{$gutter-horizontal}) / 2);
+    background-color: orangered;
+    float: left;
+    margin-right: $gutter-horizontal;
+
+    &:last-child{
+      margin-right: 0;
+    }
+
+  }
+
 }
+
+//$:not(:last-child) - does the opposite
