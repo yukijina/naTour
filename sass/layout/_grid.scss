@@ -1,6 +1,6 @@
 .row {
   max-width: $grid-width;
-  background-color: #eee;
+  //background-color: #eee;
   margin: 0 auto;
   margin-bottom: $gutter-vertical;
 
@@ -10,18 +10,47 @@
 
   @include clearfix;
 
-  .col-1-of-2 {
-    width: calc((100% - #{$gutter-horizontal}) / 2);
-    background-color: orangered;
+  //^ meaning it selects all the class starts col-
+  //another ie. [class$="col-"] - end with col
+  // [] - selects attribute ie.[src]
+  [class^="col-"]{
+    //background-color: orangered;
     float: left;
     margin-right: $gutter-horizontal;
 
     &:last-child{
       margin-right: 0;
     }
-
   }
 
-}
+  .col-1-of-2 {
+    width: calc((100% - #{$gutter-horizontal}) / 2);
+  }
+
+  .col-1-of-3 {
+    width: calc((100% - 2 * #{$gutter-horizontal}) / 3);
+    // 100% devide 3 colums - 2 gutter space
+  }
+
+  .col-2-of-3 {
+    width: calc(2 * ((100% - 2 * #{$gutter-horizontal}) / 3) + #{$gutter-horizontal});
+    // 2 x col-1-of-3 + 1 gutter space (because col-2-of-3 doesn't have 1 gutter space)
+  }
+
+  .col-1-of-4 {
+    width: calc((100% - 3 * #{$gutter-horizontal}) / 4);
+  }
+
+  .col-2-of-4 {
+    width: calc(2 * ((100% - 3 * #{$gutter-horizontal}) / 4) + #{$gutter-horizontal});
+    // 2 x col-1-of-4 + 1 gutter space
+  }
+
+  .col-3-of-4 {
+    width: calc(3 * ((100% - 3 * #{$gutter-horizontal}) / 4) + (2 *#{$gutter-horizontal}));
+    // 3 x col-1-of-4 + 2 gutter space
+  }
+
+} // the end of .row
 
 //$:not(:last-child) - does the opposite
