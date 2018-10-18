@@ -1,4 +1,5 @@
 .card {
+  //FUNTIONALITY
   //define the perspective (3D), perspective has to be in parent element and Child elements get the perspective (3D) view
   perspective: 150rem;
   -moz-perspective: 150rem; //now works for firefox too
@@ -7,8 +8,6 @@
 
 
   &__side {
-    color: #fff;
-    font-size: 2rem;
     height: 50rem;
     transition: all .8s ease;
     position: absolute; //both side and back are absolute
@@ -16,7 +15,8 @@
     left: 0;
     width: 100%; //absolute position basically start fitting their width so we need to set width
     backface-visibility: hidden; // hide the back part of the element. when we flip, we can not see the other part
-    border-radius: 3px;
+    border-radius: 3px; // this is disappear when picture added. picture overwrite
+    overflow: hidden; //the above border-radius works now
     box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
 
     &--front {
@@ -36,9 +36,58 @@
 
   &:hover &__side--front {
     //when cover hovers, card_-side transforms
-    transform: rotateY(180deg); //flip the card
+    transform: rotateY(-180deg); //flip the card
   }
   &:hover &__side--back {
     transform: rotateY(0); //back side starts from 180deg and finish 0 = flip
+  }
+
+  //FRONT SIDE STYLING
+  &__picture {
+    background-size: cover;
+    height: 23rem;
+    //background-blend-mode does not work IE and Edge
+    background-blend-mode: screen;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); // make all browser to work. This code should write before avtual clip path
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+
+    &--1 {
+      background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url(../img/nat-5.jpg);
+    }
+
+    &--2 {
+      background-image: url(..img/nat-5.jpg);
+    }
+
+    &--3 {
+      background-image: url(..img/nat-5.jpg);
+    }
+  }
+
+  &__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: right;
+    color: $color-white;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    width: 75%;
+  }
+
+  &__heading-span {
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone; //give space after A and infront of E (if not there is no space because we use span (one line))
+
+    &--1 {
+      background-image: linear-gradient(to right bottom, rgba($color-secondary-light, .85), rgba($color-secondary-dark, .85));
+    }
+  }
+
+  &__details {
+
   }
 }
