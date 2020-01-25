@@ -16,6 +16,26 @@
         <title>Natours | Exciting tours for adventurous people</title>
     </head>
     <body>
+      <div class="navigation">
+        <input type="checkbox" class="navigation__checkbox" id="navi-toggle" >
+        <label for="navi-toggle" class="navigation__button">
+          <span class="navigation__icon">&nbsp;</span>
+        </label>
+
+        <!-- Background is empty -->
+        <div class="navigation__background">&nbsp;</div>
+
+        <nav class="navigation__nav">
+          <ul class="navigation__list">
+            <li class="navigation__item"><a href="#" class="navigation__link"><span>01</span>About Natous</a></li>
+            <li class="navigation__item"><a href="#" class="navigation__link"><span>02</span>Your benefit</a></li>
+            <li class="navigation__item"><a href="#" class="navigation__link"><span>03</span>Popular tours</a></li>
+            <li class="navigation__item"><a href="#" class="navigation__link"><span>04</span>Stories</a></li>
+            <li class="navigation__item"><a href="#" class="navigation__link"><span>05</span>Book now</a></li>
+          </ul>
+        </nav>
+      </div>
+      <!-- Navigation icon -->
       <!-- Header -->
       <header class="header">
         <div class="header__logo-box">
@@ -324,9 +344,31 @@
             </div>
           </div>
         </section>
-
-
       </main>
+
+      <footer class="footer">
+        <div class="footer__logo-box">
+          <img src="img/logo-green-2x.png" alt="Full logo" class="footer__logo">
+        </div>
+        <div class="row">
+          <div class="col-1-of-2">
+            <div class="footer__navigation">
+              <ul class="footer__list">
+                <li class="footer__item"><a href="#" class="footer__link"></a></li>
+                <li class="footer__item"><a href="#" class="footer__link">Contact</a></li>
+                <li class="footer__item"><a href="#" class="footer__link">Careers</a></li>
+                <li class="footer__item"><a href="#" class="footer__link">Privacy policy</a></li>
+                <li class="footer__item"><a href="#" class="footer__link">Terms</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-1-of-2">
+            <p class="footer__copyright">
+              Built my <a href="#" class="footer__link">Jonas Schmedtmann</a> for his online course <a href="#" class="footer__link">Advanced CSS and Sass</a>. Copyright &copy; by Jonas Schmedtmann.
+            </p>
+          </div>
+        </div>
+      </footer>
 
 
 
