@@ -12,6 +12,20 @@ html {
   //This defines what 1rem is
   font-size: 62.5%;
   /* root font: 10px, calculation browser font size 16px = 100%, 10/16*100 = 62.5% */
+
+  // change font size here. Other rem setting such as padding, margin will be also automatically adjusted. (if you change font-size here, you don't need to use media query for other elemtns, if you use "rem".
+  
+  @include respond(big-desktop) {
+    font-size: 75%;  //1rem = 12px  12/16 = 75%
+  }
+  
+  @include respond(tab-land) {
+    font-size: 56.25%;  //1rem = 9px  9/16 = 56.25%
+  }
+
+  @include respond(tab-port) {
+    font-size: 50%;  //1rem = 8px  8/16 = 50%
+  }
 }
 
 body {
