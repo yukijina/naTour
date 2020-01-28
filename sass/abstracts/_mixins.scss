@@ -12,3 +12,44 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+// MEDIA QUERY MANAGER
+/* 0-6OOpx     : Phone
+600 - 900px    : Tablet portrait
+900 - 1200px   : Tablet landscape
+1200 - 1800px  : is where our style apply - desktop
+1800px -       : Laarge desktop
+*/
+
+// We refactor this code below. 
+// @mixin respond-phone {
+//   @media(max-width: 600px) {
+//     //@content allows us to pass a block of code
+//     @content 
+//   }
+// };
+
+/* $breakpoint argument choices:
+  - phone
+  - tab-port
+  - tab-land
+  - big-desktop
+*/
+
+// Refactor - pass the screen size to the argument. In this way you can use less code in @media query
+//we don't use px for @media. If users change the default font size, @media query won't affect - meaning @media won't work. Also rem fails some browsers.
+//best way is to use em.  1em = 16px  ex.600px / 16px = 37.5em
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) { @content };
+  }
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) { @content };
+  }
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) { @content };
+  }
+  @if $breakpoint == big-desktop {
+    @media (max-width: 112.5em) { @content };
+  }  
+};
