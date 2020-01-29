@@ -9,6 +9,16 @@
     transform: skewX(-12deg);
     background-color: rgba($color-white, 60%);
 
+    @include respond(tab-port) {
+        width: 100%;
+        padding: 4rem;
+        padding-left: 7rem;
+    }
+
+    @include respond(phone) {
+        transform: skewX(0);
+    }
+
     &__shape {
         width: 15rem;
         height: 15rem;
@@ -22,7 +32,12 @@
         // Move circle to left
         transform: translate(-3rem) skewX(12deg);
         position: relative;
+
+        @include respond(phone) {
+            transform: translate(-3rem) skewX(0);
+        }
     }
+
     &__img {
         height: 100%;
         transform: translateX(-4rem) scale(1.4);
@@ -30,6 +45,10 @@
     }
     &__text {
         transform: skewX(12deg);
+
+        @include respond(phone) {
+            transform: skewX(0);
+        }
     }
     &__caption {
         position: absolute; 
