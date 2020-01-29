@@ -3,6 +3,10 @@
   background-color: $color-grey-light-1;
   padding: 25rem 0;
   margin-top: -20vh; // header 95vh - 75vh = 20, use minus margin so you can fill the space(set in polygon) between header and main
+
+  @include respond(tab-port) {
+    padding: 20rem 0; 
+  }
 }
 
 
@@ -24,22 +28,39 @@
     //div box do not want to skew so we can offset here
     transform: skewY(7deg);
   }
+
+  @include respond(tab-port) {
+    padding: 10rem 0; 
+  }
 }
 
 .section-tours {
   background-color: $color-grey-light-1;
   padding: 25rem 0 15rem 0;
   margin-top: -10rem;
+
+  @include respond(tab-port) {
+    padding: 20rem 0 10rem 0;
+  }
 }
 
 .section-stories {
   padding: 15rem 0;
   position: relative;
+
+  @include respond(tab-port) {
+    padding: 10rem 0;
+  }
+  
 }
 
 .section-book {
   padding: 15rem 0;
   background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+
+  @include respond(tab-port) {
+    padding: 10rem 0;
+  }
 }
 
 .book  {
