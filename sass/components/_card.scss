@@ -153,7 +153,11 @@
 
 
   // card does not rotate anymore. Use only front card
-  @include respond(tab-port) {
+  // @include respond(tab-port) {
+
+    // refactor - mobile&tablet devise does not hover so hover:none meaning when a screen is mobile or tablet
+    @media only screen and (max-width: 56.25em),
+           only screen and (hover: none) {
     height: auto; 
     border-radius: 3px;
     background-color: $color-white;
