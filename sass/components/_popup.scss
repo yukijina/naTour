@@ -51,12 +51,15 @@
 
 
     &__content {  
+       //to make modal center
         @include absCenter;  
         width: 75%;
         // height: 50rem;
         background-color: $color-white;
+        //subtle but nice box shadow around modal box
         box-shadow: 0 2rem 4rem rgba($color-black, .2);
         border-radius: 3px;
+        // parent - table, child - table cell. Float is also ok but table will give the same hight.
         display: table;
         overflow: hidden;
         // translate is necessary. one element - one transform (@include absCenter has transform code)

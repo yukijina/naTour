@@ -149,6 +149,7 @@
     &__button:hover &__icon::after {
         top: 1rem;
     }
+    //when checked, select __button's child __icon
     &__checkbox:checked + &__button &__icon {
         // 2nd span - when clciked it is invisible
         background-color: transparent;
